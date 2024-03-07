@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Course } from '../model/course';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'course-card',
@@ -13,13 +14,19 @@ import { Course } from '../model/course';
 
 export class CourseCardComponent {
 
+
   @Input({
     required: true // باعث میشه هنگام استفاده از این کامپوننت حتما مقدار کورس وارد بشه
   })
   course:Course;
 
+  @Output()
+  courseSelected = new EventEmitter<Course>();
+
   onCourseViewed() {
-    console.log("button click from card component")  
+    console.log("button click -- Course-card")  
+
+    this.courseSelected.emit(this.course);
   } 
 
 }
