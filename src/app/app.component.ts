@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {COURSES} from '../db-data';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { CommonModule } from '@angular/common';
+import { Course } from './model/course';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,14 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
 
+  coreCourse = COURSES[0];
 
+  rxjsCourse = COURSES[1];
+
+  ngrxCourse = COURSES[2];
+
+  
+
+  }
 
 }
