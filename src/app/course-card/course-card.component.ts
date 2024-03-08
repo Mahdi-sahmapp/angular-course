@@ -30,6 +30,18 @@ export class CourseCardComponent {
     console.log("button click -- Course-card")  
 
     this.courseSelected.emit(this.course);
-  } 
+  }
+  
+  cardClass(){
 
+    if(this.course.category == 'BEGINNER'){
+        return  'beginner'  //['beginner']
+    }
+
+    // another syntax
+    // return{
+    //   'beginner': this.course.category == 'BEGINNER',
+    // }
+  }
+  
 }
