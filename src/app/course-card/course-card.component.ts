@@ -20,6 +20,9 @@ export class CourseCardComponent {
   })
   course:Course;
 
+  @Input({required: true})
+  index: number;
+
   @Output()
   courseSelected = new EventEmitter<Course>();
 
