@@ -16,11 +16,11 @@ export class CourseCardComponent {
 
 
   @Input({
-    required: true // باعث میشه هنگام استفاده از این کامپوننت حتما مقدار کورس وارد بشه
+    required: false // باعث میشه هنگام استفاده از این کامپوننت حتما مقدار کورس وارد بشه
   })
   course:Course;
 
-  @Input({required: true})
+  @Input({required: false})
   index: number;
 
   @Output()

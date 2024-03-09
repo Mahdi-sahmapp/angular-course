@@ -11,24 +11,8 @@
 </div>
 
 <div class="courses">  
-
-    @for (course of courses; track course.id; let index2 = $index;
-     let count = $count; let first = $first ;
-     let even = $even;) {
-
-        <h1>count: {{count}}</h1>
-
-        <course-card (courseSelected)="onCourseSelected($event)"
-          [course]="course"
-          [index]="index2"
-          [class.is-first]="first"
-          [class.is-last]="$last"
-          [class.is-even]="even"
-          [class.is-odd]="$odd"
-        />
-    }
-    @empty {
-        <h1>دوره آموزشی یافت نشد</h1>
-    }
+    <course-card (courseSelected)="onCourseSelected($event)"  [course]="courses[2]" />   
+    
+    <course-card (courseSelected)="onCourseSelected($event)"  [course]="courses[3]" />   
 </div>
 

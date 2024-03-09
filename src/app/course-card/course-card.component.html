@@ -2,7 +2,7 @@
 [ngClass]="cardClass()">
     
     <div class="course-title">
-       {{index}} {{ course.description}}
+       {{index || + '' + ' ' + course.description}}
     </div>
    
     @if(course.iconUrl){
