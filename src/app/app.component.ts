@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {COURSES} from '../db-data';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { CommonModule } from '@angular/common';
@@ -15,15 +15,19 @@ export class AppComponent {
 
   courses = COURSES;
 
-  @ViewChild(CourseCardComponent)
+  @ViewChild('cardRef')
   card: CourseCardComponent  
+
+  @ViewChild('container')
+  containerDiv: ElementRef
 
   startDate  = new Date(2000,0,1)
   
   title = COURSES[1].description
 
   onCourseSelected(course: Course){
-    console.log(this.card)
+    console.log("card",this.card)
+    console.log("containerDiv",this.containerDiv)
   }
 
   }
