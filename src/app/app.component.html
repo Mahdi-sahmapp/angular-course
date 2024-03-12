@@ -13,9 +13,16 @@
 
 <button (click)="onEdited()">Edit Courses</button>
 
-<div class="courses" >  
-    <course-card *ngFor="let course of courses" 
-     (courseSelected)="onCourseSelected($event)"  [course]="course" />       
+<div class="courses" *ngIf="courses[2] as course">  
+    <course-card  
+     (courseSelected)="onCourseSelected($event)"  [course]="course" >
+
+     <img width="300" alt="Angular Logo"
+             [src]="course.iconUrl">
+      <h5>total Lessons: 5</h5>  
+    </course-card> 
+     
+     
 
 </div>
 
