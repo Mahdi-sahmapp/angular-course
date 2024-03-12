@@ -17,12 +17,17 @@
     <course-card  
      (courseSelected)="onCourseSelected($event)"  [course]="course" >
 
-     <img width="300" alt="Angular Logo"
+    <div class="img2">
+        <img width="300" alt="Angular Logo"
              [src]="course.iconUrl">
-      <h5>total Lessons: 5</h5>  
+             <h5>total Lessons: 5</h5>  
+    </div>     
+      
     </course-card> 
      
-     
+     <course-card (courseSelected)="onCourseSelected($event)"  [course]="courses[1]">
+        <h5>total Lessons: 10</h5>  
+     </course-card>
 
 </div>
 
