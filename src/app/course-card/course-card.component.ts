@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Course } from '../model/course';
 import { EventEmitter } from '@angular/core';
@@ -25,6 +25,9 @@ export class CourseCardComponent {
 
   @Output()
   courseSelected = new EventEmitter<Course>();
+
+  @Input()
+  noImageTpl: TemplateRef<any>;
 
   onCourseViewed() {
     console.log("button click -- Course-card")  

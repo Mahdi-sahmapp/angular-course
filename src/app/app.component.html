@@ -14,6 +14,12 @@
 <button (click)="onEdited()">Edit Courses</button>
 
 <div class="courses" *ngIf="courses[2] as course">  
+
+    <ng-template #blankImage let-courseName100="description" >
+        <p class="warn"> No Image is available for {{courseName100}}.</p>
+        <img src="/assets/empty-image.png">
+    </ng-template>
+
     <course-card  
      (courseSelected)="onCourseSelected($event)"  [course]="course" >
 
@@ -25,7 +31,8 @@
       
     </course-card> 
      
-     <course-card (courseSelected)="onCourseSelected($event)"  [course]="courses[1]">
+     <course-card (courseSelected)="onCourseSelected($event)"  
+     [course]="courses[1]" [noImageTpl]="blankImage">
         <h5>total Lessons: 10</h5>  
      </course-card>
 
